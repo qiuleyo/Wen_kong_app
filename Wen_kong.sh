@@ -177,7 +177,7 @@ if [ -d "${MODPATH}" ];then
 	list_path=${MODPATH}/list_path
 	source "${PROP}"
 	[[ ${version} == ${MODVERSION} ]] || download 模块不是最新版
-	md5check busybox/bin/busybox a273337dacf73c5f82c54235737f5526
+	
 	md5check busybox/bin/curl 750a076523ee2e206453f45805fc8464
 	md5check busybox/bin/iconv 3b88764da33666806c59dce1f53b4d76
 	md5check busybox/bin/magick 0c12441703270170c90fb04898069de2
