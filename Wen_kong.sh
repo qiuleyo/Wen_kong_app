@@ -3,13 +3,13 @@ echo '<?xml version="1.0" encoding="utf-8"?>'
 RELOAD="true"
 MODDIR="/data/adb/modules"
 [[ -d "${MODDIR}" ]] || MODDIR="/data/adb/lite_modules"
-MODPATH="${MODDIR}/wen_kong_app"
+MODPATH="${MODDIR}/Wen_kong"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/tree/master/"
 
 LOGURL="${GITEE}/update.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong-v4.3.zip"
 MODMD5="83f0b82a652fcd565fdc21e32696f07f"
-MODVERSION="v1.0"
+MODVERSION="v4.3"
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
