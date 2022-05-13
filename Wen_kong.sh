@@ -60,7 +60,7 @@ function download(){
 						
 							echo '-下载中,稍等'
 							echo ''${MODURL}'' 2>&#38;1
-							lanzou ${MODURL##*/} ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
+							 ${MODURL##*/} ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
 						fi
 						md5sum ${TEMP_DIR}/${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
