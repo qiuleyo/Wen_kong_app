@@ -115,20 +115,3 @@ function download(){
 				</action>
 			</group>
 		EOF
-	fi
-	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/update.log) ]]; then
-		curl -sL -o ${TEMP_DIR}/update.log ${LOGURL}
-	fi
-	cat <<-EOF
-		<group>
-			<text>
-				<slice u="true" align="center" break="true" link="https://gitee.com/qiuleyo/wen_kong_app/" size="20">点击访问项目开源地址</slice>
-			</text>
-		</group>
-		<group>
-			<text>
-				<slice align="left" break="true" size="20">更新日志:</slice>
-				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat ${TEMP_DIR}/update.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
-			</text>
-		</group>
-	EOF
