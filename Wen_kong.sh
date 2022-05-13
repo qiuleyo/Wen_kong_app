@@ -222,7 +222,7 @@ cat <<-EOF
 			</set>
 		</action>
 	</group>
-
+EOF
 
 cat <<-EOF
 		<action>
