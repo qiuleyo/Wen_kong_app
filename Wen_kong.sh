@@ -178,23 +178,7 @@ if [ -d "${MODPATH}" ];then
 	source "${PROP}"
 	[[ ${version} == ${MODVERSION} ]] || download 模块不是最新版
 	
-	md5check busybox/bin/curl 750a076523ee2e206453f45805fc8464
-	md5check busybox/bin/iconv 3b88764da33666806c59dce1f53b4d76
-	md5check busybox/bin/magick 0c12441703270170c90fb04898069de2
-	md5check busybox/bin/toast 64e99c4529741ae4d419c7c9559e7020
-	md5check busybox/fonts/Roboto-Regular.ttf 77897b1dd56e8e17fd3f1a1a141006d0
-	md5check busybox/lib/libbz2.so.1.0 417361b152bcf1c9ff32ef487820eafe
-	md5check busybox/lib/libfreetype.so 118182618bc21cc62cad39575544cdd8
-	md5check busybox/lib/libiconv.so 3a202de86574f9c470615b674cf9a852
-	md5check busybox/lib/libjpeg.so 0e16f9a63bc94da268e547a715b59c23
-	md5check busybox/lib/liblzma.so.5 d10922f1e9264d46bde0a67e341a44b2
-	md5check busybox/lib/libpng16.so 32e70323c22c4421b9c350e60176a810
-	md5check busybox/lib/libtiff.so 781da74255385780256d17a0a31d7a68
-	md5check busybox/lib/libz.so.1 7b8bf1efc8a9bd50acd875c91177f792
-	md5check busybox/cacert.pem eba44a3f7c21c902ebfce7dbc279e8fd
-	md5check busybox/test 8b4ad17e367a42af0527e96da6606e9e
-	md5check system/app/Ice_Toast/Ice_Toast.apk 813914a6103871c0c1f61864a4e81372
-	md5check service.sh 9a4730aadbeedce0c406b6b1d6870cdf
+	
 else
 	download 未安装模块
 fi
