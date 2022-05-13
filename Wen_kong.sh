@@ -66,7 +66,7 @@ function download(){
 							fi
 							echo '-下载中,稍等'
 							echo ''${MODURL}'' 2>&#38;1
-							curl -o ${MODURL} ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
+							curl ${MODURL} ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
 						fi
 						md5sum ${TEMP_DIR}/${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
