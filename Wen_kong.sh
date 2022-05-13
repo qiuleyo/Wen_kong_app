@@ -4,7 +4,7 @@ RELOAD="true"
 MODDIR="/data/adb/modules"
 [[ -d "${MODDIR}" ]] || MODDIR="/data/adb/lite_modules"
 MODPATH="${MODDIR}/Wen_kong"
-GITEE="https://gitee.com/qiuleyo/wen_kong_app"
+GITEE="https://gitee.com/qiuleyo/wen_kong_app/tree/master/"
 
 LOGURL="${GITEE}/update.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong-v4.3.zip"
