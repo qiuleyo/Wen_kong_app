@@ -66,7 +66,7 @@ function download(){
 							fi
 							echo '-下载中,稍等'
 							echo ''${MODURL}'' 2>&#38;1
-							wegt https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong-v4.3.zip ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
+							curl-o "https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong-v4.3.zip" ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
 						fi
 						md5sum ${TEMP_DIR}/${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
