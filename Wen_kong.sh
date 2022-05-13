@@ -68,7 +68,6 @@ function download(){
 							echo ''${MODURL}'' 2>&#38;1
 							curl -O ${MODURL} ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
 						fi
-						md5sum ${TEMP_DIR}/${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
 							echo '-检测到'${MODVERSION}'文件,准备安装'
 							if [[ -f /data/adb/magisk/magisk64 ]]; then
