@@ -57,10 +57,16 @@ function download(){
 				<action reload="true">
 					<title>${1} 点击安装${MODVERSION}版本</title>
 					<set>
-						
+						if [[ ! -f ${TEMP_DIR}/${MODVERSION}.zip ]]; then
+							which lanzou >/dev/null
+							if [[ \$? -ne 0 ]]; then
+								echo '-蓝奏api不存在，访问蓝奏云链接手动安装'
+								echo ${MODURL}
+								exit
+							fi
 							echo '-下载中,稍等'
 							echo ''${MODURL}'' 2>&#38;1
-							 ${MODURL##*/} .zip ${MODMD5}
+							lanzou ${MODURL##*/} ${TEMP_DIR}/${MODVERSION}.zip ${MODMD5}
 						fi
 						md5sum ${TEMP_DIR}/${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
