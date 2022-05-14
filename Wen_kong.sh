@@ -202,13 +202,13 @@ cat <<-EOF
 	</group>
 	<group>
 		<action shell="hidden" reload="true">
-			<title>冻结云控/解控</title>
+			<title>冻结云控</title>
           
-			<desc>当前:${ZT}</desc>
+			
 			<set>
 				source /data/media/0/Android/freeze.sh
 			
-				ZT='-下载过程中出现问题,请重试'
+				echo '-已冻结'
 				
 			</set>
 		</action>
