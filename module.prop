@@ -1,7 +1,0 @@
-id=Wen_kong
-name=移除温控
-version=v4.3
-versionCode=43
-author=Qiu_le
-description=本模块是通过采用Magisk方式移除温控,联网会检查更新
-updateJson=https://gitee.com/qiuleyo/Wen_kong/raw/main/wenkong.json
