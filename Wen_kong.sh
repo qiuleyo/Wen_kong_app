@@ -185,7 +185,6 @@ cat <<-EOF
 			</desc>
 		</action>
 	</group>
-EOF
 
 cat <<-EOF
 
@@ -225,6 +224,7 @@ cat <<-EOF
 			</set>
 		</action>
 EOF
+
 	<group>
 		<text>
 			<slice u="true" align="center" break="true" link="${MODURL}" size="20">点击获取${MODVERSION}版本下载链接&#x000A;其他版本设置出问题不负责</slice>
