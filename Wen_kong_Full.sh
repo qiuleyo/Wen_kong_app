@@ -4,7 +4,7 @@ RELOAD="true"
 MODDIR="/data/adb/modules"
 [[ -d "${MODDIR}" ]] || MODDIR="/data/adb/lite_modules"
 MODPATH="${MODDIR}/Wen_kong_Full"
-GITEE="https://gitee.com/qiuleyo/wen_kong_app/tree/master"
+GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="379e9a122a63ae5776ad13b85041631d"
 LOGURL="${GITEE}/updateFull.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/master/raw/Wen_kong_Full-v2.4.zip"
@@ -108,8 +108,8 @@ function download(){
 			</group>
 		EOF
 	fi
-	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/update.log) ]]; then
-		curl -sL -o /data/media/0/Download/update.log ${LOGURL}
+	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/updateFull.log) ]]; then
+		curl -sL -o /data/media/0/Download/updateFull.log ${LOGURL}
 	fi
 	cat <<-EOF
 		<group>
@@ -120,7 +120,7 @@ function download(){
 		<group>
 			<text>
 				<slice align="left" break="true" size="20">更新日志:</slice>
-				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat ${TEMP_DIR}/update.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
+				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat ${TEMP_DIR}/updateFull.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
 			</text>
 		</group>
 	EOF
