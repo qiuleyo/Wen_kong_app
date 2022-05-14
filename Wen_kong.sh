@@ -176,14 +176,14 @@ fi
 
 cat <<-EOF
 	<group>
-	
+	<action>
 			<title>Wen_kong</title>
 			<desc>-版本 ${version}
 				-作者 ${author}
 				-路径 ${MODPATH}
 				-介绍 ${description}
 			</desc>
-		
+		</action>
 	</group>
 EOF
 
