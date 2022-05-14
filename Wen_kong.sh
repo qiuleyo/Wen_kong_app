@@ -187,17 +187,7 @@ cat <<-EOF
 				-路径 ${MODPATH}
 				-介绍 ${description}
 			</desc>
-			<get>
-				if [[ -n &#34;$(pgrep -f ${MODPATH}/shadow)&#34; ]] || \
-				[[ -n &#34;$(pgrep -f ${MODPATH}/service.sh)&#34; ]]; then
-					echo 1
-				else
-					echo 0
-				fi
-			</get>
-			<set>
-				
-			</set>
+			
 		</action>
 	</group>
 	<group>
