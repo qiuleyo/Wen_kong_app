@@ -209,11 +209,12 @@ cat <<-EOF
             <desc>打开即冻结,反之解冻</desc>
             <get>getprop yunkong
             if [[ $(getprop yunkong) == "0" ]];then
-            
+            source /data/media/0/Android/freeze.sh
             else
-            
+            source /data/media/0/Android/Unfreezed.sh
             fi
             </get>
+            <set>resetprop yunkong "$state"</set>
         </switch>
 EOF
 
