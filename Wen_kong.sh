@@ -58,15 +58,15 @@ function download(){
 					<title>${1} 点击安装${MODVERSION}版本</title>
 					<set>
 							echo '-下载中,稍等'
-							curl -sL -o  /data/media/0/Download/Wen_kong-${MODVERSION}.zip ${MODURL}
+							curl -sL -o  /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip ${MODURL}
 					
 							echo '-下载完成'
-						md5sum /data/media/0/Download/Wen_kong-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
+						md5sum /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
 							echo '-检测到'${MODVERSION}'文件,准备安装'
 							if [[ -f /data/adb/magisk/magisk64 ]]; then
 								alias magisk=/data/adb/magisk/magisk64
-								magisk --install-module /data/media/0/Download/Wen_kong-${MODVERSION}.zip
+								magisk --install-module /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip
 								if [[ \$? -eq 0 ]]; then
 									if [[ -f ${MODPATH}/pid ]]; then
 										kill -9 $(head -n1 ${MODPATH}/pid)
@@ -80,7 +80,7 @@ function download(){
 										if [[ \$? -eq 0 ]]; then
 											rm -rf \${UPDATE} ${MODPATH}/update
 											echo '-安装完成'
-											rm -f /data/media/0/Download/Wen_kong-${MODVERSION}.zip
+											rm -f /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip
 											nohup ${MODPATH}/service.sh >/dev/null 2>&#38;1
 											if [[ \$? -eq 0 ]]; then
 												echo '-启动成功'
@@ -97,12 +97,12 @@ function download(){
 									echo '-安装失败'
 								fi
 							else
-								cp -f /data/media/0/Download/Wen_kong-${MODVERSION}.zip ${SDCARD_PATH}
+								cp -f /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip ${SDCARD_PATH}
 								echo '-未找到面具二进制文件，请手动到面具app安装'
 								echo '-模块安装包:'${SDCARD_PATH}'/'${MODVERSION}.zip''
 							fi
 						else
-							rm -f /data/media/0/Download/Wen_kong-${MODVERSION}.zip
+							rm -f /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip
 							echo '-下载过程中出现问题,请重试'
 						fi
 					</set>
@@ -111,7 +111,7 @@ function download(){
 		EOF
 	fi
 	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/update.log) ]]; then
-	curl -sL -o /data/media/0/Download/update.log ${LOGURL}
+	curl -sL -o /data/user/0/com.fuckwenkong/files/update.log ${LOGURL}
 
 
 	fi
@@ -124,7 +124,7 @@ function download(){
 		<group>
 			<text>
 				<slice align="left" break="true" size="20">更新日志:</slice>
-				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat /data/media/0/Download/update.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
+				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat /data/user/0/com.fuckwenkong/files/update.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
 			</text>
 		</group>
 	EOF
