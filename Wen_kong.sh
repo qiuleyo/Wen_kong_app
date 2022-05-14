@@ -60,6 +60,7 @@ function download(){
 							echo '-下载中,稍等'
 							curl -sL -o  /data/media/0/Download/Wen_kong-${MODVERSION}.zip ${MODURL}
 					
+							echo '-下载完成'
 						md5sum /data/media/0/Download/Wen_kong-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
 							echo '-检测到'${MODVERSION}'文件,准备安装'
