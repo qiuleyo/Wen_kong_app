@@ -211,6 +211,7 @@ cat <<-EOF
 				source /data/media/0/Android/freeze.sh
 			</set>
 		</action>
+        </group>
 EOF
 cat <<-EOF
 
@@ -221,6 +222,7 @@ cat <<-EOF
 				source /data/media/0/Android/Unfreezed.sh
 			</set>
 		</action>
+        </group>
 EOF
 cat <<-EOF
 		<action>
