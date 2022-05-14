@@ -141,7 +141,7 @@ else
 			</text>
 		EOF
 	else
-		md5sum $(pm path com.fuckwenkong | sed "s/package://g") | grep e1e22046ef414e5746e55e9792588cc2 >/dev/null
+		md5sum $(pm path com.fuckwenkong | sed "s/package://g") | grep 379e9a122a63ae5776ad13b85041631d >/dev/null
 		if [[ $? -ne 0 ]]; then
 			cat <<-EOF
 				<text>
