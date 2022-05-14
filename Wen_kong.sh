@@ -176,6 +176,7 @@ fi
 
 cat <<-EOF
  <group>
+  <switch shell="hidden" reload="${RELOAD}">
    <title>Wen_kong</title>
    <desc>-版本 ${version}
     -作者 ${author}
@@ -197,9 +198,9 @@ cat <<-EOF
      [ -f ${DISABLE} ] || touch ${DISABLE}
     fi
    </set>
- 
+  </switch>
  </group>
-EOF
+ EOF
 cat <<-EOF
 
 		<group>
