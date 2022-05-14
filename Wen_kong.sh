@@ -10,6 +10,7 @@ LOGURL="${GITEE}/update.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/master/raw/Wen_kong-v4.3.zip"
 MODMD5="83f0b82a652fcd565fdc21e32696f07f"
 MODVERSION="v4.3"
+curl -# https://gitee.com/qiuleyo/wen_kong_app/raw/master/update.log /data/media/0/Download/
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
@@ -109,7 +110,9 @@ function download(){
 		EOF
 	fi
 	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y /data/media/0/Download/update.log) ]]; then
-		curl -# ${LOGURL} /data/media/0/Download/
+	
+
+
 	fi
 	cat <<-EOF
 		<group>
