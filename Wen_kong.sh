@@ -196,11 +196,7 @@ cat <<-EOF
 				fi
 			</get>
 			<set>
-				if [ \${state} -eq 1 ]; then
-					nohup ${SERVICE} >/dev/null 2>&#38;1
-				else
-					[ -f ${DISABLE} ] || touch ${DISABLE}
-				fi
+				
 			</set>
 		</action>
 	</group>
