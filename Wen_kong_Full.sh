@@ -198,21 +198,31 @@ cat <<-EOF
 		</switch>
 	</group>
 	<group>
-		<action shell="hidden" reload="true">
-			<title>冻结云控/解控</title>
-			<desc>当前:${TITLE}</desc>
+		<action>
+			<title>冻结云控</title>
 			<set>
-				if [[ ${mode} == shadow ]]; then
-					MODE='shell'
-				else
-					MODE='shadow'
-				fi
-				sed -i 's/^mode=.*/mode=&#34;'\${MODE}'&#34;/g' ${PROP}
+				source /data/media/0/Android/freeze.sh
+			</set>
+		</action>
+	</group>
+	<group>
+		<action>
+			<title>解冻云控</title>
+			<set>
+				source /data/media/0/Android/Unfreezed.sh
 			</set>
 		</action>
 	</group>
 EOF
 
+cat <<-EOF
+		<action>
+			<title>检查温控</title>
+			<set>
+			source /data/media/0/Android/检查温控.sh
+			</set>
+		</action>
+EOF
 cat <<-EOF
 		<action>
 			<title>查看当前详细配置</title>
