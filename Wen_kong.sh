@@ -207,7 +207,7 @@ cat <<-EOF
 			
 			<set>
             	echo -已冻结
-				$PAGE_WORK_DIR /data/media/0/Android/freeze.sh
+				$PAGE_WORK_DIR/data/media/0/Android/freeze.sh
 			
 			
 				
