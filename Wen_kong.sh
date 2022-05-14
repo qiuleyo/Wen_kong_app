@@ -207,23 +207,3 @@ cat <<-EOF
   </action>
  </group>
 EOF
-
-cat <<-EOF
-  <action>
-   <title>查看当前详细配置</title>
-   <set>
-    cat ${PROP}
-   </set>
-  </action>
-EOF
- <group>
-  <text>
-   <slice u="true" align="center" break="true" link="${MODURL}" size="20">点击获取${MODVERSION}版本下载链接&#x000A;其他版本设置出问题不负责</slice>
-  </text>
- </group>
- <group>
-  <text>
-   <slice u="true" align="center" break="true" link="https://gitee.com/qiuleyo/wen_kong_app/tree/master" size="20">点击访问项目开源地址</slice>
-  </text>
- </group>
-EOF
