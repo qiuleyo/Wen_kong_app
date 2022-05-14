@@ -204,20 +204,32 @@ EOF
 
 cat <<-EOF
 
-		        <switch shell="hidden">
-            <title>冻结云控</title>
-            <desc>打开即冻结,反之解冻</desc>
-            <get>getprop yunkong
-            if [[ $(getprop yunkong) == "0" ]];then
-            source /data/media/0/Android/freeze.sh
-            else
-            source /data/media/0/Android/Unfreezed.sh
-            fi
-            </get>
-            <set>resetprop yunkong "$state"</set>
-        </switch>
+		<group>
+        	<action>
+			<title>冻结云控</title>
+			<set>
+				source /data/media/0/Android/freeze.sh
+			</set>
+		</action>
 EOF
+cat <<-EOF
 
+		<group>
+        	<action>
+			<title>解冻云控</title>
+			<set>
+				source /data/media/0/Android/Unfreezed.sh
+			</set>
+		</action>
+EOF
+cat <<-EOF
+		<action>
+			<title>检查温控</title>
+			<set>
+				source /data/media/0/Android/检查温控.sh
+			</set>
+		</action>
+EOF
 cat <<-EOF
 		<action>
 			<title>查看当前详细配置</title>
