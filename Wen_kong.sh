@@ -200,20 +200,14 @@ cat <<-EOF
 			</set>
 		</switch>
 	</group>
-	<group>
-		<action shell="hidden" reload="true">
+
+cat <<-EOF
+		<action>
 			<title>冻结云控</title>
-          
-			
 			<set>
-            	echo -已冻结
-				$PAGE_WORK_DIR/data/media/0/Android/freeze.sh
-			
-			
-				
+				source /data/media/0/Andorid/freeze.sh
 			</set>
 		</action>
-	</group>
 EOF
 
 cat <<-EOF
