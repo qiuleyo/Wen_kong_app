@@ -7,7 +7,7 @@ MODPATH="${MODDIR}/Wen_kong_Full_edition"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="ffcab572a2ddf2ad673ab256b7ea7965"
 LOGURL="${GITEE}/updateFull.log"
-MODURL="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.3.zip"
+MODURL=""https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.3.zip""
 MODMD5="0e3658d73ff7daf22619b3f62614cfef"
 MODVERSION="v2.3"
 function download(){
@@ -144,7 +144,7 @@ else
 	if [[ ${PACKAGE_VERSION_CODE} != 9 ]]; then
 		cat <<-EOF
 			<text>
-				<slice u="true" align="center" break="true" link="${MODURL}" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
+				<slice u="true" align="center" break="true" link=${MODURL} size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
 			</text>
 		EOF
 	else
