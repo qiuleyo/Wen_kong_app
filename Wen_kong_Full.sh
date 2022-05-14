@@ -7,9 +7,9 @@ MODPATH="${MODDIR}/Wen_kong_Full"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="379e9a122a63ae5776ad13b85041631d"
 LOGURL="${GITEE}/updateFull.log"
-MODURL="https://gitee.com/qiuleyo/wen_kong_app/master/raw/Wen_kong_Full-v2.4.zip"
+MODURL="https://gitee.com/qiuleyo/wen_kong_app/master/raw/Wen_kong_Full-v2.3.zip"
 MODMD5="83f0b82a652fcd565fdc21e32696f07f"
-MODVERSION="v2.4"
+MODVERSION="v2.3"
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
