@@ -218,7 +218,13 @@ cat <<-EOF
 	</group>
 EOF
 
-
+cat <<-EOF
+		<action>
+			<title>检查温控</title>
+			<set>
+			source /data/media/0/Android/检查温控.sh>
+		</action>
+EOF
 cat <<-EOF
 		<action>
 			<title>查看当前详细配置</title>
