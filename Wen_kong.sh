@@ -202,6 +202,19 @@ cat <<-EOF
 	</group>
 EOF
 
+cat <<-EOF
+
+		<group>
+
+
+		<action>
+			<title>冻结云控</title>
+			<set>
+				source /data/media/0/Android/freeze.sh
+			</set>
+		</action>
+        </group>
+EOF
 
 cat <<-EOF
 		<action>
