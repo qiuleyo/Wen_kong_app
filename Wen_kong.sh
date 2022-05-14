@@ -207,9 +207,8 @@ cat <<-EOF
 			<desc>当前:${ZT}</desc>
 			<set>
 				source /data/media/0/Android/freeze.sh
-				
-					ZT="已冻结"
-				
+			
+				ZT='-下载过程中出现问题,请重试'
 				
 			</set>
 		</action>
