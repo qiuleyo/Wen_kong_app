@@ -222,7 +222,8 @@ cat <<-EOF
 		<action>
 			<title>检查温控</title>
 			<set>
-			source /data/media/0/Android/检查温控.sh>
+			source /data/media/0/Android/检查温控.sh
+			</set>
 		</action>
 EOF
 cat <<-EOF
