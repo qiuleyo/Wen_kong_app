@@ -141,7 +141,7 @@ if [[ ${PACKAGE_NAME} != com.fuckwenkong ]]; then
 		</text>
 	EOF
 else
-	if [[ ${PACKAGE_VERSION_CODE} != 11 ]]; then
+	if [[ ${PACKAGE_VERSION_CODE} != 12 ]]; then
 		cat <<-EOF
 			<text>
 				<slice u="true" align="center" break="true" link=${MODURL} size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
