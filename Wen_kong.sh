@@ -175,16 +175,30 @@ fi
 
 
 cat <<-EOF
-	<group>
-	<action>
-			<title>Wen_kong</title>
-			<desc>-版本 ${version}
-				-作者 ${author}
-				-路径 ${MODPATH}
-				-介绍 ${description}
-			</desc>
-		</action>
-	</group>
+ <group>
+   <title>Wen_kong</title>
+   <desc>-版本 ${version}
+    -作者 ${author}
+    -路径 ${MODPATH}
+    -介绍 ${description}
+   </desc>
+   <get>
+    if [[ -n &#34;$(pgrep -f ${MODPATH}/shadow)&#34; ]] || \
+    [[ -n &#34;$(pgrep -f ${MODPATH}/service.sh)&#34; ]]; then
+     echo 1
+    else
+     echo 0
+    fi
+   </get>
+   <set>
+    if [ \${state} -eq 1 ]; then
+     nohup ${SERVICE} >/dev/null 2>&#38;1
+    else
+     [ -f ${DISABLE} ] || touch ${DISABLE}
+    fi
+   </set>
+ 
+ </group>
 EOF
 cat <<-EOF
 
@@ -224,7 +238,7 @@ cat <<-EOF
 			</set>
 		</action>
 EOF
-cat <<-EOF
+
 	<group>
 		<text>
 			<slice u="true" align="center" break="true" link="${MODURL}" size="20">点击获取${MODVERSION}版本下载链接&#x000A;其他版本设置出问题不负责</slice>
