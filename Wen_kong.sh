@@ -200,7 +200,7 @@ cat <<-EOF
    </set>
   </switch>
  </group>
- EOF
+ 
 cat <<-EOF
 
 		<group>
