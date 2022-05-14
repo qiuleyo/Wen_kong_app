@@ -209,9 +209,8 @@ cat <<-EOF
 				source /data/media/0/Android/freeze.sh
 				
 					ZT="已冻结"
-				else
-					ZT="未冻结"
-				fi
+				
+				
 			</set>
 		</action>
 	</group>
