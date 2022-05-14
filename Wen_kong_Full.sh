@@ -3,7 +3,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>'
 RELOAD="true"
 MODDIR="/data/adb/modules"
 [[ -d "${MODDIR}" ]] || MODDIR="/data/adb/lite_modules"
-MODPATH="${MODDIR}/Wen_kong_Full"
+MODPATH="${MODDIR}/Wen_kong_Full_edition"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="379e9a122a63ae5776ad13b85041631d"
 LOGURL="${GITEE}/updateFull.log"
