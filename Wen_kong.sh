@@ -144,10 +144,10 @@ if [[ ${PACKAGE_NAME} != com.fuckwenkong ]]; then
 		</text>
 	EOF
 else
-	if [[ ${PACKAGE_VERSION_CODE} != 1 ]]; then
+	if [[ ${PACKAGE_VERSION_CODE} != 11 ]]; then
 		cat <<-EOF
 			<text>
-				<slice u="true" align="center" break="true" link="" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
+				<slice u="true" align="center" break="true" link="" size="20">管理器不是最新版&#x000A;点击获取最新APP下载链接</slice>
 			</text>
 		EOF
 	else
