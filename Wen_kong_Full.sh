@@ -181,21 +181,7 @@ cat <<-EOF
 				-路径 ${MODPATH}
 				-介绍 ${description}
 			</desc>
-			<get>
-				if [[ -n &#34;$(pgrep -f ${MODPATH}/shadow)&#34; ]] || \
-				[[ -n &#34;$(pgrep -f ${MODPATH}/service.sh)&#34; ]]; then
-					echo 1
-				else
-					echo 0
-				fi
-			</get>
-			<set>
-				if [ \${state} -eq 1 ]; then
-					nohup ${SERVICE} >/dev/null 2>&#38;1
-				else
-					[ -f ${DISABLE} ] || touch ${DISABLE}
-				fi
-			</set>
+			
 		</action>
 	</group>
 	<group>
