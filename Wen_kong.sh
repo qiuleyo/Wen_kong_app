@@ -110,7 +110,7 @@ function download(){
 		EOF
 	fi
 	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y /data/media/0/Download/update.log) ]]; then
-	curl -# https://gitee.com/qiuleyo/wen_kong_app/raw/master/update.log /data/media/0/Download/
+	curl -o https://gitee.com/qiuleyo/wen_kong_app/raw/master/update.log /data/media/0/Download/
 
 
 	fi
