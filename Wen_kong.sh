@@ -206,9 +206,10 @@ cat <<-EOF
           
 			
 			<set>
+            	echo '-已冻结'
 				source /data/media/0/Android/freeze.sh
 			
-				echo '-已冻结'
+			
 				
 			</set>
 		</action>
