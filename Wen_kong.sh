@@ -166,18 +166,67 @@ else
 	download 未安装模块
 fi
 
-
 cat <<-EOF
  <group>
+  <switch shell="hidden" reload="${RELOAD}">
    <title>Wen_kong</title>
    <desc>-版本 ${version}
     -作者 ${author}
     -路径 ${MODPATH}
     -介绍 ${description}
    </desc>
+   <get>
+    if [[ -n &#34;$(pgrep -f ${MODPATH}/shadow)&#34; ]] || \
+    [[ -n &#34;$(pgrep -f ${MODPATH}/service.sh)&#34; ]]; then
+     echo 1
+    else
+     echo 0
+    fi
+   </get>
+   <set>
+    if [ \${state} -eq 1 ]; then
+     nohup ${SERVICE} >/dev/null 2>&#38;1
+    else
+     [ -f ${DISABLE} ] || touch ${DISABLE}
+    fi
+   </set>
+  </switch>
  </group>
- EOF
- 
+ <group>
+  <action shell="hidden" reload="true">
+   <title>冻结云控/解控</title>
+   <desc>当前:${TITLE}</desc>
+   <set>
+    if [[ ${mode} == shadow ]]; then
+     MODE='shell'
+    else
+     MODE='shadow'
+    fi
+    sed -i 's/^mode=.*/mode=&#34;'\${MODE}'&#34;/g' ${PROP}
+   </set>
+  </action>
+ </group>
+EOF
+
+cat <<-EOF
+  <action>
+   <title>查看当前详细配置</title>
+   <set>
+    cat ${PROP}
+   </set>
+  </action>
+EOF
+ <group>
+  <text>
+   <slice u="true" align="center" break="true" link="${MODURL}" size="20">点击获取${MODVERSION}版本下载链接&#x000A;其他版本设置出问题不负责</slice>
+  </text>
+ </group>
+ <group>
+  <text>
+   <slice u="true" align="center" break="true" link="https://gitee.com/qiuleyo/wen_kong_app/tree/master" size="20">点击访问项目开源地址</slice>
+  </text>
+ </group>
+EOF
 cat <<-EOF
 
 		<group>
