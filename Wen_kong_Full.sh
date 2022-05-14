@@ -58,9 +58,10 @@ function download(){
 					<title>${1} 点击安装${MODVERSION}版本</title>
 					<set>
 							echo '-下载中,稍等'
-							
-						curl -sL -o /data/user/0/com.fuckwenkong/files/Wen_kong_Full${MODVERSION}.zip ${MODURL}
-						md5sum /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
+							curl -sL -o  /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip ${MODURL}
+					
+							echo '-下载完成'
+								md5sum /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
 							echo '-检测到'${MODVERSION}'文件,准备安装'
 							if [[ -f /data/adb/magisk/magisk64 ]]; then
