@@ -108,7 +108,7 @@ function download(){
 			</group>
 		EOF
 	fi
-	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/update.log) ]]; then
+	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y /data/media/0/Download/update.log) ]]; then
 		curl -sL -o /data/media/0/Download/update.log ${LOGURL}
 	fi
 	cat <<-EOF
@@ -120,7 +120,7 @@ function download(){
 		<group>
 			<text>
 				<slice align="left" break="true" size="20">更新日志:</slice>
-				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat ${TEMP_DIR}/update.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
+				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat /data/media/0/Download/update.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
 			</text>
 		</group>
 	EOF
@@ -143,7 +143,7 @@ else
 	if [[ ${PACKAGE_VERSION_CODE} != 1 ]]; then
 		cat <<-EOF
 			<text>
-				<slice u="true" align="center" break="true" link="https://www.lanzouw.com/i1Rmov23l8f" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
+				<slice u="true" align="center" break="true" link="" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
 			</text>
 		EOF
 	else
