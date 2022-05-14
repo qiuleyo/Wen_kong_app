@@ -203,6 +203,7 @@ cat <<-EOF
 	<group>
 		<action shell="hidden" reload="true">
 			<title>冻结云控/解控</title>
+            ZT=ZT="未冻结"
 			<desc>当前:${ZT}</desc>
 			<set>
 				if [[ ${ZT} == 未冻结 ]]; then
