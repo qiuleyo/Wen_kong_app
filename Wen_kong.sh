@@ -58,7 +58,7 @@ function download(){
 					<title>${1} 点击安装${MODVERSION}版本</title>
 					<set>
 							echo '-下载中,稍等'
-							curl -O ${MODURL} /data/media/0/Download/Wen_kong-Wen_kong-${MODVERSION}.zip ${MODMD5}
+							curl -# ${MODURL} /data/media/0/Download/Wen_kong-${MODVERSION}.zip ${MODMD5}
 						
 						md5sum /data/media/0/Download/Wen_kong-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
