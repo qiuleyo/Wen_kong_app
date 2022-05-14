@@ -119,7 +119,7 @@ function download(){
 		</group>
 		<group>
 			<text>
-				<slice align="left" break="true" size="20">更新日志:</slice>
+				<slice align="left" break="true" size="20">更新日志:${LOGURL}</slice>
 				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat ${TEMP_DIR}/updateFull.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
 			</text>
 		</group>
