@@ -125,13 +125,6 @@ function download(){
 		</group>
 	EOF
 	exit
-}
-function md5check(){
-	md5sum "${MODPATH}/${1}" | egrep "${2}" >/dev/null
-	if [[ $? -ne 0 ]]; then
-		download fix $@
-	fi
-}
 
 if [[ ${PACKAGE_NAME} != com.fuckwenkong ]]; then
 	cat <<-EOF
