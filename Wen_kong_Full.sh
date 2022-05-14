@@ -144,7 +144,7 @@ else
 	if [[ ${PACKAGE_VERSION_CODE} != 11 ]]; then
 		cat <<-EOF
 			<text>
-				<slice u="true" align="center" break="true" link="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.3.zip" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
+				<slice u="true" align="center" break="true" link="https://gitee.com/qiuleyo/wen_kong_app/raw/master/APP1.1.apk" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
 			</text>
 		EOF
 	else
