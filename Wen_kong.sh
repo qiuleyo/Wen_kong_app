@@ -4,13 +4,12 @@ RELOAD="true"
 MODDIR="/data/adb/modules"
 [[ -d "${MODDIR}" ]] || MODDIR="/data/adb/lite_modules"
 MODPATH="${MODDIR}/Wen_kong"
-GITEE="https://gitee.com/qiuleyo/wen_kong_app/tree/master"
+GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="379e9a122a63ae5776ad13b85041631d"
 LOGURL="${GITEE}/update.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/master/raw/Wen_kong-v4.3.zip"
 MODMD5="83f0b82a652fcd565fdc21e32696f07f"
 MODVERSION="v4.3"
-
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
@@ -109,8 +108,8 @@ function download(){
 			</group>
 		EOF
 	fi
-	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y /data/media/0/Download/update.log) ]]; then
-	curl -o https://gitee.com/qiuleyo/wen_kong_app/raw/master/update.log /data/media/0/Download/
+	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/update.log) ]]; then
+	curl -sL -o /data/media/0/Download/update.log ${LOGURL}
 
 
 	fi
