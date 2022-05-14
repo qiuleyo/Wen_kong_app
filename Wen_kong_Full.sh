@@ -58,14 +58,14 @@ function download(){
 					<title>${1} 点击安装${MODVERSION}版本</title>
 					<set>
 							echo '-下载中,稍等'
-							curl -O ${MODURL} /data/media/0/Download/Wen_kong_Full${MODVERSION}.zip ${MODMD5}
-						
-						md5sum /data/media/0/Download/Wen_kong_Full-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
+							
+						curl -sL -o /data/user/0/com.fuckwenkong/files/Wen_kong_Full${MODVERSION}.zip ${MODURL}
+						md5sum /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
 							echo '-检测到'${MODVERSION}'文件,准备安装'
 							if [[ -f /data/adb/magisk/magisk64 ]]; then
 								alias magisk=/data/adb/magisk/magisk64
-								magisk --install-module /data/media/0/Download/Wen_kong_Full-${MODVERSION}.zip
+								magisk --install-module /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip
 								if [[ \$? -eq 0 ]]; then
 									if [[ -f ${MODPATH}/pid ]]; then
 										kill -9 $(head -n1 ${MODPATH}/pid)
@@ -95,12 +95,12 @@ function download(){
 									echo '-安装失败'
 								fi
 							else
-								cp -f /data/media/0/Download/Wen_kong_Full-${MODVERSION}.zip ${SDCARD_PATH}
+								cp -f /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip ${SDCARD_PATH}
 								echo '-未找到面具二进制文件，请手动到面具app安装'
 								echo '-模块安装包:'${SDCARD_PATH}'/'${MODVERSION}.zip''
 							fi
 						else
-							rm -f /data/media/0/Download/Wen_kong_Full-${MODVERSION}.zip
+							rm -f /data/user/0/com.fuckwenkong/files/Wen_kong_Full-${MODVERSION}.zip
 							echo '-下载过程中出现问题,请重试'
 						fi
 					</set>
@@ -109,7 +109,7 @@ function download(){
 		EOF
 	fi
 	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${TEMP_DIR}/updateFull.log) ]]; then
-		curl -sL -o /data/media/0/Download/updateFull.log ${LOGURL}
+		curl -sL -o /data/user/0/com.fuckwenkong/files/updateFull.log ${LOGURL}
 	fi
 	cat <<-EOF
 		<group>
@@ -120,7 +120,7 @@ function download(){
 		<group>
 			<text>
 				<slice align="left" break="true" size="20">更新日志:</slice>
-				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat /data/media/0/Download/updateFull.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
+				<slice break="true" size="15" color="#ff6800">&#x000A;$(cat /data/user/0/com.fuckwenkong/files/updateFull.log | sed ':a;N;$!ba; s/\n/\&#x000A;/g')</slice>
 			</text>
 		</group>
 	EOF
