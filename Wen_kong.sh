@@ -109,7 +109,7 @@ function download(){
 		EOF
 	fi
 	if [[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y /data/media/0/Download/update.log) ]]; then
-		curl -sL -o /data/media/0/Download/update.log ${LOGURL}
+		curl -# ${LOGURL} /data/media/0/Download/
 	fi
 	cat <<-EOF
 		<group>
