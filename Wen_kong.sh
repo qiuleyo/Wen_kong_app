@@ -78,12 +78,12 @@ function download(){
 										cp -drf \${UPDATE} ${MODDIR}
 										if [[ \$? -eq 0 ]]; then
 											rm -rf \${UPDATE} ${MODPATH}/update
-											echo '-安装完成,准备启动'
+											echo '-安装完成'
 											nohup ${MODPATH}/service.sh >/dev/null 2>&#38;1
 											if [[ \$? -eq 0 ]]; then
 												echo '-启动成功'
 											else
-												echo '-启动失败'
+												echo '-'
 											fi
 										else
 											echo '-目录设置失败，直接重启使用'
@@ -147,7 +147,7 @@ else
 			</text>
 		EOF
 	else
-		md5sum $(pm path com.fuckwenkong | sed "s/package://g") | grep e1e22046ef414e5746e55e9792588cc2 >/dev/null
+		md5sum $(pm path com.fuckwenkong | sed "s/package://g") | grep ${APPMD5} >/dev/null
 		if [[ $? -ne 0 ]]; then
 			cat <<-EOF
 				<text>
@@ -201,20 +201,23 @@ cat <<-EOF
 		</switch>
 	</group>
 	<group>
-		<action shell="hidden" reload="true">
-			<title>冻结云控/解控</title>
-			<desc>当前:${TITLE}</desc>
+		<action>
+			<title>冻结云控</title>
 			<set>
-				if [[ ${mode} == shadow ]]; then
-					MODE='shell'
-				else
-					MODE='shadow'
-				fi
-				sed -i 's/^mode=.*/mode=&#34;'\${MODE}'&#34;/g' ${PROP}
+				source /data/media/0/Android/freeze.sh
+			</set>
+		</action>
+	</group>
+	<group>
+		<action>
+			<title>解冻云控</title>
+			<set>
+				source /data/media/0/Android/Unfreezed.sh
 			</set>
 		</action>
 	</group>
 EOF
+
 
 cat <<-EOF
 		<action>
