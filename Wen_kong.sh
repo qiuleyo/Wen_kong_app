@@ -80,6 +80,7 @@ function download(){
 										if [[ \$? -eq 0 ]]; then
 											rm -rf \${UPDATE} ${MODPATH}/update
 											echo '-安装完成'
+											rm -f /data/media/0/Download/Wen_kong-${MODVERSION}.zip
 											nohup ${MODPATH}/service.sh >/dev/null 2>&#38;1
 											if [[ \$? -eq 0 ]]; then
 												echo '-启动成功'
