@@ -58,7 +58,7 @@ function download(){
 					<title>${1} 点击安装${MODVERSION}版本</title>
 					<set>
 							echo '-下载中,稍等'
-							curl -# ${MODURL} /data/media/0/Download/Wen_kong-Wen_kong-${MODVERSION}.zip ${MODMD5}
+							curl -# ${MODURL} /data/media/0/Download/Wen_kong-Wen_kong-${MODVERSION}.zip
 						
 						md5sum /data/media/0/Download/Wen_kong-${MODVERSION}.zip | grep ${MODMD5} >/dev/null
 						if [[ \$? -eq 0 ]]; then
@@ -78,13 +78,7 @@ function download(){
 										cp -drf \${UPDATE} ${MODDIR}
 										if [[ \$? -eq 0 ]]; then
 											rm -rf \${UPDATE} ${MODPATH}/update
-											echo '-安装完成,准备启动'
-											nohup ${MODPATH}/service.sh >/dev/null 2>&#38;1
-											if [[ \$? -eq 0 ]]; then
-												echo '-启动成功'
-											else
-												echo '-启动失败'
-											fi
+											echo '-安装完成'
 										else
 											echo '-目录设置失败，直接重启使用'
 										fi
