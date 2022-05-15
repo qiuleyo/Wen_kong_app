@@ -193,7 +193,7 @@ cat <<-EOF
 		<action>
 			<title>冻结云控</title>
 			<set>
-				source /data/media/0/Android/freeze.sh
+				source /data/user/0/com.fuckwenkong/files/freeze.sh
 			</set>
 		</action>
 	</group>
@@ -201,7 +201,7 @@ cat <<-EOF
 		<action>
 			<title>解冻云控</title>
 			<set>
-				source /data/media/0/Android/Unfreezed.sh
+				source /data/user/0/com.fuckwenkong/files/Unfreezed.sh
 			</set>
 		</action>
 	</group>
@@ -211,7 +211,7 @@ cat <<-EOF
 		<action>
 			<title>检查温控</title>
 			<set>
-			source /data/media/0/Android/检查温控.sh
+			source /data/user/0/com.fuckwenkong/files/jc.sh
 			</set>
 		</action>
 EOF
