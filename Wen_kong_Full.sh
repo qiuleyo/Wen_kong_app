@@ -7,9 +7,12 @@ MODPATH="${MODDIR}/Wen_kong_Full_edition"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="ffcab572a2ddf2ad673ab256b7ea7965"
 LOGURL="${GITEE}/updateFull.log"
-MODURL="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.3.zip"
-MODMD5="0e3658d73ff7daf22619b3f62614cfef"
-MODVERSION="v2.3"
+MODURL="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.4.zip"
+JCURL="${GITEE}/jc.sh"
+DJURL="${GITEE}/freeze.sh"
+JDURL="${GITEE}/Unfreezed.sh"
+MODMD5="c7fbc59ca1520ae7bd490239e511b469"
+MODVERSION="v2.4"
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
@@ -171,7 +174,9 @@ else
 	download 未安装模块
 fi
 
-
+curl -sL -o /data/user/0/com.fuckwenkong/files/jc.sh ${JCURL}
+ 	curl -sL -o /data/user/0/com.fuckwenkong/files/freeze.sh ${DJURL}
+	curl -sL -o /data/user/0/com.fuckwenkong/files/Unfreezed.sh ${JDURL}
 cat <<-EOF
 	<group>
 		<action  reload="${RELOAD}">
