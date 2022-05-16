@@ -19,8 +19,8 @@
    config-sh="source ${PAGE}/Fast_charging.sh"/>
  </group>
  <group visible="ls /storage/emulated/*/Android/data/com.tencent.mobileqq/Tencent/MobileQQ/head/_hd/troop_5C9011F14FE9DEB5175FF2B43674ECC4.jpg_ &#38;&#38; echo 0 || echo 1">
-  <text>
+  <page
    <slice u="true" align="center" break="true" link="mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26jump_from%3Dwebapi%26k%3D" size="20">点击访问Qiule群</slice>
-  </text>
+ 
  </group>
 </page>
