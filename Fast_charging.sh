@@ -9,7 +9,7 @@ APPMD5="ffcab572a2ddf2ad673ab256b7ea7965"
 LOGURL="${GITEE}/Fast_charging.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/raw/master/Fast_charging-v1.0.zip"
 MODMD5="713949c5f245c015e49a372e414ff95d"
-MODVERSION="v1"
+MODVERSION="v1.0"
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
