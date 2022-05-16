@@ -20,10 +20,10 @@
  </group>
  
 </page>
-cat <<-EOF
+
 <group>
   <text>
    <slice u="true" align="center" break="true" link="mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26jump_from%3Dwebapi%26k%3DhJBbR6Bt5DAZfwSrgx2DNf7OVXghC9-z" size="20">点击访问Qiule群</slice>
   </text>
  </group>
- EOF
+ 
