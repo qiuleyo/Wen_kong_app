@@ -8,8 +8,8 @@ GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="ffcab572a2ddf2ad673ab256b7ea7965"
 LOGURL="${GITEE}/Fast_charging.log"
 MODURL="https://gitee.com/qiuleyo/wen_kong_app/raw/master/Fast_charging-v1.0.zip"
-MODMD5="be550d353458ab550de854fa6ace13f1"
-MODVERSION="v1.0"
+MODMD5="a0e490a3eb04b4ad494726f628e041ba"
+MODVERSION="v1.2"
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
