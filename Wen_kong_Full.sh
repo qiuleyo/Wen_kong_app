@@ -7,12 +7,12 @@ MODPATH="${MODDIR}/Wen_kong_Full_edition"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
 APPMD5="ffcab572a2ddf2ad673ab256b7ea7965"
 LOGURL="${GITEE}/updateFull.log"
-MODURL="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.5.zip"
+MODURL="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.6.zip"
 JCURL="${GITEE}/jc.sh"
 DJURL="${GITEE}/freeze.sh"
 JDURL="${GITEE}/Unfreezed.sh"
-MODMD5="29577a08fa231e8fd5ded7a97ce5142d"
-MODVERSION="v2.5"
+MODMD5="4d69b74fbe2338d1c0a84593acd25d8d"
+MODVERSION="v2.6"
 function download(){
 	if [[ ${1} == fix ]]; then
 		cat <<-EOF
