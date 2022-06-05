@@ -2,28 +2,24 @@
 <page>
  <group>
   <page
-   title="W"   
-   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/firstbootanimation.sh) ]] &#38;&#38; curl -o ${PAGE}/firstbootanimation.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/firstbootanimation.sh"
-   config-sh="source ${PAGE}/firstbootanimation.sh"
- </group>
-<group>
-  <page
-   title="Wen_kong_Full"
-   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Wen_kong_Full.sh) ]] &#38;&#38; curl -o ${PAGE}/Wen_kong_Full.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong_Full.sh"
-   config-sh="source ${PAGE}/Wen_kong_Full.sh"/>
+   title="测试界面"
+   before-load=""
+   config-sh=""/>
  </group>
  <group>
+  <page visible="[[ -n $(ls -l /dev/block/platform/*/*/by-name | grep logo | sed 's/.* //g') ]] &#38;&#38; echo 1 || echo 0"
+   title="开机第一屏修改"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/firstbootanimation.sh) ]] &#38;&#38; curl -o ${PAGE}/firstbootanimation.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/firstbootanimation.sh"
+   config-sh="source ${PAGE}/firstbootanimation.sh"/>
   <page
-   title="Fast_charging快充"
-   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Fast_charging.sh) ]] &#38;&#38; curl -o ${PAGE}/Fast_charging.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Fast_charging.sh"
-   config-sh="source ${PAGE}/Fast_charging.sh"/>
+   title="开机第二屏动画制作"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/bootanimation.xml) ]] &#38;&#38; curl -o ${PAGE}/bootanimation.xml -sL https://gitee.com/youngdriver/bootanimation/raw/master/bootanimation.xml"
+   config-sh="cat ${PAGE}/bootanimation.xml"/>
  </group>
- 
+ <group visible="[[ -d /data/user/0/com.miui.tsmclient/cache/image_manager_disk_cache ]] &#38;&#38; echo 1 || echo 0">
+  <page
+   title="NFC卡面管理"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/nfc.sh) ]] &#38;&#38; curl -o ${PAGE}/nfc.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/nfc.sh"
+   config-sh="source ${PAGE}/nfc.sh"/>
+ </group>
 </page>
-
-<group>
-  <text>
-   <slice u="true" align="center" break="true" link="mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26jump_from%3Dwebapi%26k%3DhJBbR6Bt5DAZfwSrgx2DNf7OVXghC9-z" size="20">点击访问Qiule群</slice>
-  </text>
- </group>
- 
