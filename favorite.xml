@@ -10,4 +10,10 @@
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/bootanimation.xml) ]] &#38;&#38; curl -o ${PAGE}/bootanimation.xml -sL https://gitee.com/youngdriver/bootanimation/raw/master/bootanimation.xml"
    config-sh="cat ${PAGE}/bootanimation.xml"/>
  </group>
+ <group visible="[[ -d /data/user/0/com.miui.tsmclient/cache/image_manager_disk_cache ]] &#38;&#38; echo 1 || echo 0">
+  <page
+   title="NFC卡面管理"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/nfc.sh) ]] &#38;&#38; curl -o ${PAGE}/nfc.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/nfc.sh"
+   config-sh="source ${PAGE}/nfc.sh"/>
+ </group>
 </page>
