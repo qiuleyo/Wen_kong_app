@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <page>
-    <group title="magisk模块">
-        <resource file="kr-script/hello.sh" />
+    <group title="切换MIUI版本">
+        <resource file="busybox/hello.sh" />
         <action>
             <title>选择MIUI版本</title>
             <desc>支持12~13的开发版/稳定版切换，非娱乐改版号</desc>
@@ -23,7 +23,7 @@
         <param name="bbhc" desc="请输入版本号" type="text" value-sh="echo 'V13.0.2.1.1DEV'" />
     </params>
         </action>
-        <resource file="kr-script/shen.sh" />
+        <resource file="busybox/shen.sh" />
         <action>
             <title>同步神隐数据</title>
             <desc>点击后立刻同步神隐数据</desc>
@@ -36,7 +36,7 @@
         </action>
     </group>
         <group title="其他">
-        <resource file="kr-script/uninstall.sh" />
+        <resource file="busybox/uninstall.sh" />
         <action>
             <title>卸载切换版本模块</title>
             <desc>卸载后将恢复原先版本</desc>
