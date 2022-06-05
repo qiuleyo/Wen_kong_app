@@ -5,6 +5,8 @@
    title="开机第一屏修改"
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/firstbootanimation.sh) ]] &#38;&#38; curl -o ${PAGE}/firstbootanimation.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/firstbootanimation.sh"
    config-sh="source ${PAGE}/firstbootanimation.sh"/>
+   </group>
+    <group>
   <page
    title="开机第二屏动画制作"
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/bootanimation.xml) ]] &#38;&#38; curl -o ${PAGE}/bootanimation.xml -sL https://gitee.com/youngdriver/bootanimation/raw/master/bootanimation.xml"
