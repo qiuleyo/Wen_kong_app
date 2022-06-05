@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <page>
  <group>
-  <page
-   title="目前仅测试功能"
-   before-load=""
-   config-sh=""/>
+ <page visible="[[ -n $(ls -l /dev/block/platform/*/*/by-name | grep logo | sed 's/.* //g') ]] &#38;&#38; echo 1 || echo 0"
+   title="开机第一屏修改"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/firstbootanimation.sh) ]] &#38;&#38; curl -o ${PAGE}/firstbootanimation.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/firstbootanimation.sh"
+   config-sh="source ${PAGE}/firstbootanimation.sh"/>
  </group>
