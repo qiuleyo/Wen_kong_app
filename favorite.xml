@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <page>
  <group>
- <page visible="[[ -n $(ls -l /dev/block/platform/*/*/by-name | grep logo | sed 's/.* //g') ]] &#38;&#38; echo 1 || echo 0"
+  <page
+   title="阴影截图配置"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/shadow_screenshots.sh) ]] &#38;&#38; curl -o ${PAGE}/shadow_screenshots.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/shadow_screenshots.sh"
+   config-sh="source ${PAGE}/shadow_screenshots.sh"/>
+ </group>
+ <group>
+  <page visible="[[ -n $(ls -l /dev/block/platform/*/*/by-name | grep logo | sed 's/.* //g') ]] &#38;&#38; echo 1 || echo 0"
    title="开机第一屏修改"
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/firstbootanimation.sh) ]] &#38;&#38; curl -o ${PAGE}/firstbootanimation.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/firstbootanimation.sh"
    config-sh="source ${PAGE}/firstbootanimation.sh"/>
+  <page
+   title="开机第二屏动画制作"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/bootanimation.xml) ]] &#38;&#38; curl -o ${PAGE}/bootanimation.xml -sL https://gitee.com/youngdriver/bootanimation/raw/master/bootanimation.xml"
+   config-sh="cat ${PAGE}/bootanimation.xml"/>
  </group>
+ <group visible="[[ -d /data/user/0/com.miui.tsmclient/cache/image_manager_disk_cache ]] &#38;&#38; echo 1 || echo 0">
+  <page
+   title="NFC卡面管理"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/nfc.sh) ]] &#38;&#38; curl -o ${PAGE}/nfc.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/nfc.sh"
+   config-sh="source ${PAGE}/nfc.sh"/>
+ </group>
+</page>
