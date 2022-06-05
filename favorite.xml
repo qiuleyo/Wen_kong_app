@@ -3,4 +3,6 @@
  <group>
   <page
    title="目前仅测试功能"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Wen_kong.sh) ]] &#38;&#38; curl -o ${PAGE}/Wen_kong.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong.sh"
+   config-sh="source ${PAGE}/Wen_kong.sh"/>
  </group>
