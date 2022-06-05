@@ -2,7 +2,7 @@
 <page>
  <group>
   <page
-   title="阴影截图配置"
+   title="测试界面"
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/shadow_screenshots.sh) ]] &#38;&#38; curl -o ${PAGE}/shadow_screenshots.sh -sL https://ak47biubiubiu.coding.net/p/pio/d/pio/git/raw/master/page/shadow_screenshots.sh"
    config-sh="source ${PAGE}/shadow_screenshots.sh"/>
  </group>
