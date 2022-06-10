@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <page>
-    <group title="测试页面">
-        <action>
-         </group>
-</page>
+ <group>
+  <page
+   title="测试界面"
+   before-load=""
+   config-sh=""/>
+ </group>
