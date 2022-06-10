@@ -5,7 +5,7 @@ MODDIR="/data/adb/modules"
 [[ -d "${MODDIR}" ]] || MODDIR="/data/adb/lite_modules"
 MODPATH="${MODDIR}/Wen_kong_Full_edition"
 GITEE="https://gitee.com/qiuleyo/wen_kong_app/raw/master"
-APPMD5="ffcab572a2ddf2ad673ab256b7ea7965"
+APPMD5="15b24450e304ade6f445c571073b8753"
 LOGURL="${GITEE}/updateFull.log"
 MODURL="https://gitee.com/qiuleyo/Wen_kong_Full_edition/raw/main/Wen_kong_Full_edition-v2.6.zip"
 JCURL="${GITEE}/jc.sh"
@@ -144,7 +144,7 @@ if [[ ${PACKAGE_NAME} != com.fuckwenkong ]]; then
 		</text>
 	EOF
 else
-	if [[ ${PACKAGE_VERSION_CODE} != 11 ]]; then
+	if [[ ${PACKAGE_VERSION_CODE} != 12 ]]; then
 		cat <<-EOF
 			<text>
 				<slice u="true" align="center" break="true" link="https://gitee.com/qiuleyo/wen_kong_app/raw/master/APP1.1.apk" size="20">管理器不是最新版&#x000A;点击获取最新管理器下载链接</slice>
