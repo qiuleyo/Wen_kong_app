@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <page>
-    <group title="切换MIUI版本">
-        <resource file="busybox/hello.sh" />
+    <group title="测试页面">
         <action>
-            <title>选择MIUI版本</title>
-            <desc>支持12~13的开发版/稳定版切换，非娱乐改版号</desc>
-            <param name="test" value="22.1.8">
-                <option value="22.1.8">MIUI13开发版</option>
-                <option value="V13.0.2.1.1DEV">MIUI13稳定版</option>
-                <option value="21.10.15">MIUI12.5开发版</option>
-                <option value="V12.5.12.0.RJDMIXM">MIUI12.5稳定版</option>
-                <option value="20.12.5">MIUI12开发版</option>
-                <option value="V12.0.3.0.QJDMIXM">MIUI12稳定版</option>
-            </param>
-            <set>$PAGE_WORK_DIR/hello.sh $test</set>
-        </action>
-        <action>
-    <title>自定义MIUI版本</title>
-    <desc>请输入稳定版号或开发版号，非娱乐改版本号</desc>
-    <set>$PAGE_WORK_DIR/hello.sh $bbhc;</set>
-    <params>
-        <param name="bbhc" desc="请输入版本号" type="text" value-sh="echo 'V13.0.2.1.1DEV'" />
-    </params>
-        </action>
-        <resource file="busybox/shen.sh" />
-        <action>
-            <title>同步神隐数据</title>
-            <desc>点击后立刻同步神隐数据</desc>
-            <set>$PAGE_WORK_DIR/shen.sh</set>
-        </action>
-        <action shell="hidden">
-            <title>查看电池数据</title>
-            <desc>请勿冻结或删除电量与性能否则无法查看</desc>
-            <set>am start -n com.miui.powerkeeper/com.miui.powerkeeper.ui.powertools.module.batterylife.BatteryStatusActivity</set>
-        </action>
-    </group>
-        <group title="其他">
-        <resource file="busybox/uninstall.sh" />
-        <action>
-            <title>卸载切换版本模块</title>
-            <desc>卸载后将恢复原先版本</desc>
-            <set>$PAGE_WORK_DIR/uninstall.sh</set>
-        </action>
          </group>
 </page>
