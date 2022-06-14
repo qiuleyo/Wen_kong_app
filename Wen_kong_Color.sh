@@ -68,7 +68,7 @@ function download(){
 							echo '-检测到'${MODVERSION}'文件,准备安装'
 							if [[ -f /data/adb/magisk/magisk64 ]]; then
 								alias magisk=/data/adb/magisk/magisk64
-								magisk --install-module /data/user/0/com.fuckwenkong/files/Wen_kong-${MODVERSION}.zip
+								magisk --install-module /data/user/0/com.fuckwenkong/files/Wen_kong_Color-${MODVERSION}.zip
 								if [[ \$? -eq 0 ]]; then
 									if [[ -f ${MODPATH}/pid ]]; then
 										kill -9 $(head -n1 ${MODPATH}/pid)
