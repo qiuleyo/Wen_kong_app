@@ -2,7 +2,7 @@
 <page>
  <group>
   <page
-   title="Wen_kong配置"
+   title="Wen_kong"
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Wen_kong.sh) ]] &#38;&#38; curl -o ${PAGE}/Wen_kong.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong.sh"
    config-sh="source ${PAGE}/Wen_kong.sh"/>
  </group>
@@ -11,6 +11,18 @@
    title="Wen_kong_Full"
    before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Wen_kong_Full.sh) ]] &#38;&#38; curl -o ${PAGE}/Wen_kong_Full.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong_Full.sh"
    config-sh="source ${PAGE}/Wen_kong_Full.sh"/>
+ </group>
+  <group>
+  <page
+   title="Wen_kong_Color"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Wen_kong.sh) ]] &#38;&#38; curl -o ${PAGE}/Wen_kong_Color.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong_Color.sh"
+   config-sh="source ${PAGE}/Wen_kong_Color.sh"/>
+ </group>
+  <group>
+  <page
+   title="Wen_kong_Color_Full"
+   before-load="[[ $(( $(date +%s) - 300 )) -gt $(stat -c %Y ${PAGE}/Wen_kong.sh) ]] &#38;&#38; curl -o ${PAGE}/Wen_kong_Color_Full.sh -sL https://gitee.com/qiuleyo/wen_kong_app/raw/master/Wen_kong_Color_Full.sh"
+   config-sh="source ${PAGE}/Wen_kong_Color_Full.sh"/>
  </group>
  <group>
   <page
